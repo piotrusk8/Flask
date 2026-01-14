@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>MovieDB - Flask</title>
+</head>
+<body>
+  <h1>Lista filmów</h1>
+  <a href="{{ url_for('add_movie') }}">Idź do strony dodawania</a>
+
+  <form method="POST" action="{{ url_for('home') }}">
+    <ul>
+      {% for movie in movies %}
+        <li>
+          <input type="checkbox" name="movieToRemove" value="{{ movie[0] }}">
+          {{ movie[1] }}, {{ movie[2] }}, {{ movie[3] }}
+        </li>
+      {% endfor %}
+    </ul>
+    <button type="submit">Usuń zaznaczone</button>
+  </form>
+</body>
+</html>

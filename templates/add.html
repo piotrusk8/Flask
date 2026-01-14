@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Dodaj film</title>
+</head>
+<body>
+  <h1>Dodaj film</h1>
+  <a href="{{ url_for('home') }}">Powrót do strony domowej</a>
+
+  <form method="POST" action="/addMovie">
+    Title: <input type="text" name="title"><br>
+    Year: <input type="text" name="year"><br>
+    Actors: <input type="text" name="actors"><br>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>
